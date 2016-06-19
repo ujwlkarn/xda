@@ -6,6 +6,10 @@
 #'charSummary(iris)
 #'@export
 charSummary<-function(df){
+
+  if(class(df)[1] != "data.frame"){
+	df <- as.data.frame(df)
+}
   num=c()
   char=c()
   for (var in 1:ncol(df)) {if (class(df[,var])=="numeric") {num  <- c(num,names(df[var]))
